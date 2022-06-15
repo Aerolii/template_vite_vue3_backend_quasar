@@ -16,7 +16,13 @@ export default defineConfig({
       extensions: ['vue'],
       include: [/\.vue$/, /\.vue\?vue/],
       exclude: [/[\\/]node_modules[\\/]/, /[\\/]\.git[\\/]/, /[\\/]\.nuxt[\\/]/],
-      dts: 'src/types/components.d.ts'
+      dts: 'src/types/components.d.ts',
+      types: [
+        {
+          from: 'vue-router',
+          names: ['RouterLink', 'RouterView']
+        }
+      ]
     })
   ],
   resolve: {
