@@ -1,33 +1,15 @@
-import { fileURLToPath, URL } from 'url'
+import { defineConfig, mergeConfig } from 'vite'
 
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
-import vueJsx from '@vitejs/plugin-vue-jsx'
-import Components from 'unplugin-vue-components/vite'
+import baseConfig from './vite.config.base'
+import devConfig from './vite.config.dev'
+import prodConfig from './vite.config.prod'
 
 // https://vitejs.dev/config/
-export default defineConfig({
-  plugins: [
-    vue(),
-    vueJsx(),
-    // 自动导入组件
-    Components({
-      dirs: ['src/*'],
-      extensions: ['vue'],
-      include: [/\.vue$/, /\.vue\?vue/],
-      exclude: [/[\\/]node_modules[\\/]/, /[\\/]\.git[\\/]/, /[\\/]\.nuxt[\\/]/],
-      dts: 'src/types/components.d.ts',
-      types: [
-        {
-          from: 'vue-router',
-          names: ['RouterLink', 'RouterView']
-        }
-      ]
-    })
-  ],
-  resolve: {
-    alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url))
-    }
+export default defineConfig(({ command, mode }) => {
+  if (command === 'serve') {
+    return mergeConfig(devConfig, baseConfig)
+  } else {
+    // command === 'build'
+    return mergeConfig(prodConfig, baseConfig)
   }
 })
