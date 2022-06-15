@@ -10,6 +10,8 @@ module.exports = {
     "@vue/eslint-config-prettier",
   ],
   env: {
+    browser: true,
+    node: true,
     "vue/setup-compiler-macros": true,
   },
   overrides: [
