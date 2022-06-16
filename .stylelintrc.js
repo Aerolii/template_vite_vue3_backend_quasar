@@ -3,6 +3,8 @@ module.exports = {
   defaultSeverity: 'warning',
   plugins: ['stylelint-order'],
   rules: {
+    'color-hex-length': 'long',
+    'color-function-notation': 'legacy',
     'at-rule-no-unknown': [
       true,
       {
