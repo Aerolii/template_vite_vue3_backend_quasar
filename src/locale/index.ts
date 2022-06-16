@@ -20,7 +20,8 @@ export const setupI18n = async (app: App) => {
     if (Object.prototype.hasOwnProperty.call(g, key)) {
       const element = g[key]
       console.log('element', element)
-      Object.assign(obj, element)
+      Object.assign(obj.en, element.en)
+      Object.assign(obj.cn, element.cn)
     }
   }
 
