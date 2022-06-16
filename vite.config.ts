@@ -6,6 +6,7 @@ import prodConfig from './vite.config.prod'
 
 // https://vitejs.dev/config/
 export default defineConfig(({ command, mode }) => {
+  console.log('mode', mode)
   if (command === 'serve') {
     return mergeConfig(devConfig, baseConfig)
   } else {

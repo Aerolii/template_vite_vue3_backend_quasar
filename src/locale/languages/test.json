@@ -1,0 +1,10 @@
+{
+  "en": {
+    "hello": "Hello",
+    "helloWorld": "{msg} world"
+  },
+  "cn": {
+    "hello": "你好",
+    "helloWorld": "{msg} 世界"
+  }
+}
