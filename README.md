@@ -7,4 +7,9 @@
 - husky
 - lint-staged
 - commitlint
+- pretty-quick
+- stylelint
 
+## Layout
+
+[!基础布局](source/basic%20layout.png) [!sidebar](source/layout-sidebar.png) [!content](source/layout-content.png)
